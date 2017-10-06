@@ -3,12 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { FirebaseConfig } from './../environments/firebase.config';
+import { AngularFireModule } from 'angularfire2/index';
+
+import { CadastroPessoaModule } from './cadastro-pessoa/cadastro-pessoa.module';
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CadastroPessoaModule,
+    AngularFireModule.initializeApp(FirebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
